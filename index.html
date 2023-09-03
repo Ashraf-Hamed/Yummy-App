@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+ 
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/logo.png" />
+
+    <title>Yummy App</title>
+  </head>
+  <body>
+
+    
+    <aside >
+      <nav>
+
+        <div class="container d-flex justify-content-center align-items-start ">
+
+            <div class="nav-content d-flex flex-column justify-content-between ps-4 py-4    ">
+                <div class="nav-item">
+                    <ul class="list-unstyled">
+                      <li><a href="#" class="nav-link" id="search" onclick="searchInput()" >Search</a></li>
+                      <li>
+                        <a href="#" class="nav-link" id="Categories" onclick="getCategories()">Categories</a>
+                      </li>
+                      <li><a href="#" class="nav-link" id="Area" onclick="getArea()">Area</a></li>
+                      <li>
+                        <a href="#" class="nav-link" id="Ingredients" onclick="getIngredients()">Ingredients</a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link" id="Contact" onclick="ShowContact()">Contact Us</a>
+                      </li>
+                    </ul>
+                </div>
+
+                <div class="nav-contact ">
+                    <div class="icon d-flex justify-content-center gap-5 py-3">
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-twitter"></i>
+                      <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <div class="copy-right ">
+                        <p>Copyright A.H© 2023 All Rights Reserved.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="control d-flex flex-column justify-content-between align-items-center py-3">
+                <div class="logo">
+                    <img src="img/logo.png"  alt="logo-img" class="w-75 ms-2">
+                </div>
+
+                <div class="icon-control ">
+                    <i class="fa-solid fa-bars fa-2x " id="openNavBar"></i>
+                   
+                    <i class="fa-solid fa-xmark fa-2x fa-x d-none" id="CloseNavBar"></i>
+                </div>
+
+                <div class="sharing-icon d-flex flex-column gap-2">
+                    <i class="fa-solid fa-globe mb-1"></i>
+                    <i class="fa-solid fa-share-nodes"></i>
+                   
+                </div>
+            </div>
+        </div>
+       
+      </nav>
+    </aside>
+
+    <div class="container w-100 d-none  h-25 " id="searchContainer">
+    </div>
+    
+    
+    <section class="mainMeals" id="mainMeals">
+        <div class="container pt-3">
+            <div class="row gx-4 " id="rowBody" >
+               
+            </div>
+        </div>
+    </section>
+
+
+    <section class="detailsMeals d-none position-relative " id="detailsMeals">
+
+        <header class="d-flex justify-content-between w-75  mx-auto">
+            <h1 class="text-center text-white py-4 ms-5">Details Meals</h1>
+            <button class="btn-close btn-close-white my-4" id="btnClose"></button>
+          </header>
+        <div class="container  pt-3">
+            <div class="row gx-4" id="rowBodyDetails" >
+                
+               
+        </div>
+    </section>
+
+
+
+    <div class="contact min-vh-100 d-flex justify-content-center align-items-center d-none container" id="contactSection">
+      <div class="container w-75  text-center">
+          <div class="row g-4">
+              <div class="col-md-6">
+                  <input onkeyup="vaildName()" id="nameInput" type="text" class="form-control" placeholder="Enter Your Name">
+                  <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                      <div class="d-flex justify-content-between align-items-center">
+                        Not Matching Name , please enter With Capital letter and [2:10] Small letters
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <input onkeyup="vaildEmail()" id="emailInput" type="email" class="form-control " placeholder="Enter Your Email">
+                  <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Please enter a valid email such as test@test.com
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <input onkeyup="vaildPhone()" id="phoneInput" type="text" class="form-control " placeholder="Enter Your Phone">
+                  <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+                      Enter valid Phone Number
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <input onkeyup="vaildAge()" id="ageInput" type="number" class="form-control " placeholder="Enter Your Age">
+                  <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+                      Enter valid age
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <input onkeyup="vaildPassword()"  id="passwordInput"  type="password" class="form-control " placeholder="Enter Your Password">
+                  <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                      Enter valid password *Start Letter characters, Minimum eight characters, at least one letter or one number:*
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <input onkeyup="vaildRePassword()"  id="repasswordInput"  type="password" class="form-control " placeholder="Repassword">
+                  <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                      Enter valid repassword 
+                  </div>
+              </div>
+          </div>
+          <button id="submitBtn" disabled class="btn btn-outline-success px-2 mt-3">Submit</button>
+      </div>
+  </div>
+
+
+
+    <div class="loading d-none " id="loading">
+        <span class="loader"></span>
+       </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+
